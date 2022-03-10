@@ -13,10 +13,18 @@ public class ScrollingObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //초당 speed의 속도로 왼쪽으로 평행이동 구현
-        transform.Translate(Vector3.left * speed*Time.deltaTime); //translate : 평행이동 메서드
-        //speed를 초당으로 할려면 speed에 time.deltaTime을 곱해야 한다.
-        //그렇지않으면 프레임으로 계산된다.
+        if(!GameManager.instance.isGameover)
+        {
+            //초당 speed의 속도로 왼쪽으로 평행이동 구현
+            transform.Translate(Vector3.left * speed * Time.deltaTime); 
+            //translate : 평행이동 메서드
+                                                                        
+            //speed를 초당으로 할려면 speed에 time.deltaTime을 곱해야 한다.
+                                                                     
+            //그렇지않으면 프레임으로 계산된다.
+        }
+
+        
     }
 }
 //transform은 unity의 transform을 가르킨다.
